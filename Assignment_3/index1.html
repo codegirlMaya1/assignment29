@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Basic Bootstrap</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+ 
+    body{
+        background-image: linear-gradient(to right, rgb(255, 252, 252), rgb(196, 184, 184));
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       
+
+    }
+.divider1{
+    
+    height: 75px;
+    width: 100%;
+}
+.divider2{
+    
+    height: 100px;
+    padding-top: 10;
+    width: 100%;
+    padding: 10;
+}
+.divider3{
+    height: auto;
+    padding-top: 30;
+    width: 100%;
+    padding: 20;
+}
+.divider4{
+  height: 200px;
+  padding-top: 100;
+  width: 100%;
+  padding-top: 30%;
+  padding-bottom: 10%;
+ 
+}
+
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: gray;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: yellow;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  footer{
+    background-color: darkgrey;
+    color:rgb(252, 245, 245)
+    
+   
+  }
+  .footer1{
+    flex: column;
+    flex-direction: row;
+    align-items: center;
+    float: left;
+  }
+  .content{
+    display: grid;
+    grid-template-columns: 1fr minmax(150px, 20%);
+    height: 100px;
+
+  }
+  main, aside {
+    padding: 12px;
+    text-align: center;
+    
+  }
+  
+  main {
+    background: white;
+  }
+  
+  aside {
+    background: gray;
+    display: block;
+    margin-left: 20px;
+    padding: 20px;
+    width: 250px;
+    float: right;
+    color: white;
+    
+
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  li {
+    display: inline;
+  }
+  div.scroll-container {
+    background-color: #4e84c2;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  .slide{
+    filter: grayscale(100%);
+    display: inline 4;
+    
+  }
+  
+  div.scroll-container img {
+    padding: 10px;
+    color: #4e84c2;
+  }
+  .slider {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    background-color: darkgray;
+    border: darkslategray;
+    border-radius: 7px;
+}
+
+.slider>* {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: slide 12s infinite;
+}
+
+.slide:nth-child(1) {
+    left: 0%;
+    animation-delay: -1s;
+    background-image: url(custom3.jpeg);
+    background-size: cover;
+    background-position: bottom;
+
+}
+
+.slide:nth-child(2) {
+    left: 100%;
+    animation-delay: 2s;
+    background-image: url(custom2.jpeg);
+    background-size: 50%;
+    background-position: bottom;
+}
+
+.slide:nth-child(3) {
+    left: 100%;
+    animation-delay: 5s;
+    background-image: url(custom1.jpeg);
+    background-size: 50%;
+    background-position: bottom;
+}
+
+.slide:nth-child(4) {
+    left: 100%;
+    animation-delay: 8s;
+    background-image: url(phone.jpeg);
+    background-size: 30%;
+    background-position: bottom;
+}
+
+.slide p {
+    font-family: sans-serif;
+    font-size: 100px;
+    color: blue;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    filter: grayscale(100%);
+    
+}
+
+@keyframes slide {
+    0% {
+        left: 100%;
+        width: 100%;
+        opacity: 1;
+    }
+
+    5% {
+        left: 0%;
+    }
+
+    25% {
+        left: 0%;
+    }
+
+    30% {
+        left: -100%;
+        width: 100%;
+        opacity: 1;
+    }
+
+    30.0001% {
+        left: -100%;
+        width: 0%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 100%;
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+
+</style>
+   </head>
+
+    <body>
+
+       <!--Main Content-->   
+<div class="container mt-5 pt-5">
+  <h1>SMORES<small> Official Website</small></h1>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">HOME</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Team Showcase</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Contact
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" class="link-primary"  href="#">New Product Development Request</a></li>
+                  <li><a class="dropdown-item" href="#"> Contact Sales</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"> Contact Customer/Client Support</a></li>
+                </ul>
+              </li>
+            </ul>
+            </form>
+          </div>
+        </div>
+      </nav>
+     
+
+
+</div>
+<!--Products Section-->
+<section id="products" class="my-5"> </section>
+<h2 class="mb-4">OUR PRODUCTS <small>$199-$599</small></h2>
+        <div class="card-group">
+            <div class="card">
+              <img src="phone.jpeg" class="card-img-top" alt="phone picture">
+              <div class="card-body">
+                <h5>Phone Sale <small>S199+ </small></h5>
+                <p class="card-text">Phone prices are below average starting at $199.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="laptop.jpeg" class="card-img-top" alt="laptop picture">
+              <div class="card-body">
+                <h5 class="card-title">Laptop Sale $299+ </h5>
+                <p class="card-text"> Laptops are on sale prices are as low as $299</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="desktop.jpeg" class="card-img-top" alt="desktop picture">
+              <div class="card-body">
+                <h5 class="card-title">Desktop Sale <small> $399+</small></h5>
+                <p class="card-text">Desktops are available prices with prices starting at $399.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+           </div>
+           <section>
+            <section class="divider1"></section> 
+            <section class="divider1">
+              <h2 id="teams">Product Showcase <small>(custom):</small></h2>
+              <section class="divider1"></section>
+              <div class="card-group">
+                <div class="card">
+                    
+                  <img src="" class= "card-img-top" alt="team collab">
+                  <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted"></small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted"></small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="" class="card-img-top" alt="release picture">
+                  <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text">.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted"></small>
+                  </div>
+                </div>
+              </div>
+
+              <Section>
+                <section class="divider3"></section>
+              </Section>
+              <section class="divider4"></section>
+
+              <div class="Content">
+                <main id="about">
+                  About:
+                  <p class="lead"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate distinctio culpa deleniti. Error quae at doloribus nobis, nihil repellendus maxime. Numquam provident dolorum debitis officiis quis qui nesciunt officia expedita.</p>
+                  <p class="text-justify"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate distinctio culpa deleniti. Error quae at doloribus nobis, nihil repellendus maxime. Numquam provident dolorum debitis officiis quis qui nesciunt officia expedita.</p>
+                  <p class="text-justify"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate distinctio culpa deleniti. Error quae at doloribus nobis, nihil repellendus maxime. Numquam provident dolorum debitis officiis quis qui nesciunt officia expedita.</p>
+                  <p class="text-uppercase"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate distinctio culpa deleniti. Error quae at doloribus nobis, nihil repellendus maxime. Numquam provident dolorum debitis officiis quis qui nesciunt officia expedita.</p>
+                  <p class="font-weight-bold "> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate distinctio culpa deleniti. Error quae at doloribus nobis, nihil repellendus maxime. Numquam provident dolorum debitis officiis quis qui nesciunt officia expedita.</p>
+                  <p class="text-md-left "> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate distinctio culpa deleniti. Error quae at doloribus nobis, nihil repellendus maxime. Numquam provident dolorum debitis officiis quis qui nesciunt officia expedita.</p>
+                  <p class="text-sm-left "> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate distinctio culpa deleniti. Error quae at doloribus nobis, nihil repellendus maxime. Numquam provident dolorum debitis officiis quis qui nesciunt officia expedita.</p>
+                  
+                  <span class="align-baseline">Thanks</span>
+                  <span class="align-top">for learning</span>
+                  <span class="align-middle">more about</span>
+                  <span class="align-bottom">Lorem</span>
+                  <span class="align-text-top">ipsum</span>
+                  <span class="align-text-bottom">dolor!</span>
+                
+                </main>
+                <aside>
+                 FACT:
+                 <p class="lead"> Lorem ipsum was conceived as a filler text....</p>
+                </aside>
+              </div>
+
+              <section class="divider3"></section>
+          
+              <h2 id="contact"> GET IN CONTACT</h2>
+
+          <section class="divider1"></section>
+             
+          
+          <div class="container">
+              <form action="action.html">
+            
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            
+                <label for="subject">Reason For Contact:</label>
+                <textarea id="subject" name="subject" placeholder="Add additional comments here....regarding your request." style="height:200px"></textarea>
+            
+                
+                <button type="button" class="btn btn-primary">Primary</button>
+                <input type="submit" value="Submit">
+            
+              </form>
+              <section class="divider2"></section>     
+              <table class="table table-striped-columns table-dark">
+                <thead>
+                  <tr>
+                    <th>YEAR</th>
+                    <th>SALES</th>
+                    <th>PRODUCT</th>
+                    <th>SERVICES</th>
+                    <th>QUALITY ASSURANCE TESTING</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2019</td>
+                    <td>100</td>
+                    <td>Laptop</td>
+                    <td>Warranty</td>
+                    <td>passed</td>
+                  </tr>
+                  <tr>
+                    <td>2020</td>
+                    <td>200</td>
+                    <td>Cellphone</td>
+                    <td>Warranty (subscription)</td>
+                    <td>delayed, passed</td>
+                  </tr>
+                  <tr>
+                    <td>2021</td>
+                    <td>300</td>
+                    <td>Smart Tv</td>
+                    <td>Standard Warranty</td>
+                    <td>passed</td>
+                  </tr>
+                  <tr>
+                    <td>2022</td>
+                    <td>250</td>
+                    <td>Custom(Items)</td>
+                    <td>Warranty (subscription)</td>
+                    <td>passed</td>
+                  </tr>
+                  <tr>
+                    <td>2023</td>
+                    <td>340</td>
+                    <td>Desktop</td>
+                    <td>Warranty(gold)</td>
+                    <td>passed</td>
+                  </tr>
+                </tbody>
+            </table>
+
+             
+          
+              <div class="div4">  
+                      
+                <footer>
+                  <div class="div4">
+                    <a href="#home" class="link-primary">Home</a>
+                    <a href="#shade1" class="link-secondary">Newsletter</a>
+                    <a href="#contact" class="link-success ">Products</a>
+                    <a href="#about" class="link-dark">About</a>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                  </div>
+                 </footer>
+                </div>          
+              </section>
+              
+              <div class="slider">
+                <div class="slide">
+                  <p id="shade1"></p></div>
+                  <div class="slide">
+                    <p class="shade1"></p>
+                  </div>
+                  <div class="slide">
+                    <p class="shade1"></p>
+                  </div>
+                  <div class="slide">
+                    <p class="shade1"></p>
+
+          
+    
+      </body>
+    </html>
+       
+
+              
+                  
+             
